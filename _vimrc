@@ -1,37 +1,97 @@
-" General
-set number	"Mostrar números de linha 
-set linebreak	"Quebrar linhas por palavra (requer quebras de linha) 
-set showbreak=+++	"Prefixo de linha quebrada por quebra automática 
-set textwidth=100	"Quebra de linha (número de colunas) 
-set showmatch	"Destacar chave correspondente 
-set visualbell	"Use campainha visual (sem bipes) 
- 
-set hlsearch	"Destaque todos os resultados da pesquisa 
-set smartcase	"Habilitar pesquisa smart-case 
-set ignorecase	"Sempre não diferencia maiúsculas de minúsculas 
-set incsearch	"Procura strings incrementalmente 
- 
-set autoindent	"Recuar automaticamente novas linhas 
-set expandtab	"Use espaços em vez de tabulações 
-set shiftwidth=4	"Número de espaços de indentação automática 
-set smartindent	"Habilitar indentação inteligente 
-set smarttab	"Habilitar smart-tabs 
-set softtabstop=4	"Número de espaços por guia 
- 
-" Advanced
-set ruler	"Mostrar informações da régua de linha e coluna 
- 
-set undolevels=1000	"Número de níveis de desfazer 
-set backspace=indent,eol,start	"Comportamento de retrocesso 
- 
- 
 
-"cores e temas
-colorscheme murphy 
-filetype on
+"Quebrar linhas por palavra (requer quebras de linha)
+set linebreak
+
+"Quebra de linha (nÃºmero de colunas)
+set textwidth=100
+
+"Mostrar informaÃ§Ãµes da rÃ©gua de linha e coluna
+set ruler
+
+"Menu sobreposto para pesquisa
+set wildmenu
+
+"Destaca linha inferior
+set laststatus=2
+
+"Mensagem de confirma sair sem salvar?
+set confirm
+
+"Titulo do documento que esta sendo editado
+set title
+
+"Salvar alteraÃ§Ãµes documento
+map <C-s> :w<CR>
+
+" ativar sintaxe colorida
 syntax on
 
-" Tabs por espaços:
-set expandtab
-set shiftwidth=4
-set tabstop=4
+" ativar indentaÃ§Ã£o automÃ¡tica
+set autoindent
+
+
+" ativa indentaÃ§Ã£o inteligente, o Vim tentarÃ¡ adivinhar
+" qual Ã© a melhor indentaÃ§Ã£o para o cÃ³digo quando vocÃª
+" efetuar quebra de linha. Funciona bem para linguagem C
+set smartindent
+
+" por padrÃ£o o vim armazena os Ãºltimos 50 comandos que vocÃª
+" digitou em seu histÃ³rico. Eu sou exagerado, prefiro armazenar
+" os Ãºltimos 5000
+set history=5000
+
+" ativar numeraÃ§Ã£o de linha
+set number
+
+" destaca a linha em que o cursor estÃ¡ posicionado
+" Ã³timo para quem nÃ£o enxerga muito bem
+set cursorline
+
+" ativa o clique do mouse para navegaÃ§Ã£o pelos documentos
+set mouse=a
+
+" ativa o compartilhamento de Ã¡rea de transferÃªncia entre o Vim
+" e a interface grÃ¡fica
+set clipboard=unnamedplus
+
+" converte o tab em espaÃ§os em branco
+" ao teclar tab o Vim irÃ¡ substutuir por 2 espaÃ§os
+set tabstop=2 softtabstop=2 expandtab shiftwidth=2
+
+" ao teclar a barra de espaÃ§o no modo normal, o Vim
+" irÃ¡ colapsar ou expandir o bloco de cÃ³digo do cursor
+" foldlevel Ã© a partir de que nÃ­vel de indentaÃ§Ã£o o 
+" cÃ³digo iniciarÃ¡ colapsado
+set foldmethod=syntax
+set foldlevel=99
+nnoremap <space> za
+
+colo happy_hacking 
+
+let g:indentLine_enabled = 1
+map <c-k>i :IndentLinesToggle<cr>
+
+
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_statusline_ontop=0
+let g:airline_theme='base16_twilight'
+
+
+
+let g:airline#extensions#tabline#formatter = 'default'
+
+"Trasforma a linha em comentario
+filetype plugin on
+let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
+map cc <Plug>NERDCommenterInvert
+
+let g:ale_linters = {'python': ['flake8', 'pylint'], 'javascript': ['eslint']}
+let g:ale_completion_enabled = 0
+" let g:ale_fixers = {
+"      'python': ['yapf'],
+"  }
+" nmap <F10> :ALEFix<CR>
+" let g:ale_fix_on_save = 1
