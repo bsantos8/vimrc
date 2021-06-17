@@ -1,3 +1,4 @@
+"CONFIGURAÇÕES VIM
 
 "Quebrar linhas por palavra (requer quebras de linha)
 set linebreak
@@ -25,10 +26,10 @@ map <C-s> :w<CR>
 
 " ativar sintaxe colorida
 syntax on
+syntax enable
 
 " ativar indentação automática
 set autoindent
-
 
 " ativa indentação inteligente, o Vim tentará adivinhar
 " qual é a melhor indentação para o código quando você
@@ -66,11 +67,15 @@ set foldmethod=syntax
 set foldlevel=99
 nnoremap <space> za
 
-colo happy_hacking 
+set guifont=DejaVu_Sans_Mono:h10:cANSI:qDRAFT
+
+colo materialbox
 
 let g:indentLine_enabled = 1
 map <c-k>i :IndentLinesToggle<cr>
 
+"Quando abrir outroterminal vim que abra embaixo e o vertical a direita
+set splitbelow splitright
 
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
@@ -78,7 +83,13 @@ let g:airline_powerline_fonts = 1
 let g:airline_statusline_ontop=0
 let g:airline_theme='base16_twilight'
 
+"Mudar a leader key para ',''
+let mapleader = "/"
 
+"Atalho para estar compilando o arquivo e para estar dando um preview (/ + c - compila; / + p -
+"preview)
+map <Leader>c :w! \| !compiler <c-r>%<CR>
+map <Leader>p :!opout <c-r>%<CR><CR>
 
 let g:airline#extensions#tabline#formatter = 'default'
 
