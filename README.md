@@ -5,10 +5,14 @@ Repositório de configurações para o editor vim
 
 Link para os plugins:
 
-https://github.com/mhinz/vim-startify
+https://github.com/mhinz/vim-startify		   			
+
 https://github.com/rafi/awesome-vim-colorschemes
+
 https://github.com/tomasiser/vim-code-dark
+
 https://github.com/Yggdroot/indentLine
+
 https://github.com/preservim/nerdtree
 https://github.com/ryanoasis/vim-devicons
 https://github.com/vim-airline/vim-airline
