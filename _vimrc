@@ -106,3 +106,27 @@ let g:ale_completion_enabled = 0
 "  }
 " nmap <F10> :ALEFix<CR>
 " let g:ale_fix_on_save = 1
+
+" Global Sets """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+syntax on            " Ativar destaque de sintaxe
+set nu               " Ativar números de linha
+set tabstop=4        " Mostra a aba existente com 4 espaços de largura
+set softtabstop=4    " Mostra a aba existente com 4 espaços de largura
+set shiftwidth=4     " Ao recuar com '>', use 4 espaços de largura
+set expandtab        "  Ao pressionar tab, insira 4 espaços
+set smarttab         " inserir guias no início de uma linha de acordo com a largura do deslocamento
+set smartindent      " inserir guias no início de uma linha de acordo com a largura do deslocamento
+set incsearch        " Pesquisa incremental
+set ignorecase       " Ingore case na pesquisa
+set smartcase        " Considera maiúsculas e minúsculas se houver um caractere maiúsculo
+set colorcolumn=100  "  Desenha uma linha na linha dada para manter o tamanho da linha
+set signcolumn=yes   " Adicione uma coluna à esquerda. Útil para linting
+set encoding=utf-8   " The encoding should be utf-8 to activate the font icons
+set nobackup         " Sem arquivos de backup
+set nowritebackup    " Sem arquivos de backup
+set splitright       " Cria as divisões verticais à direita
+set splitbelow       " Crie as divisões horizontais abaixo
+set mouse=a          " Enable mouse support
+filetype on          " Detectar e definir a opção de tipo de arquivo e acionar o evento 
+filetype plugin on   " Carregar o arquivo de plugin para o tipo de arquivo, se houver
+filetype indent on   " Carregar o arquivo de recuo para o tipo de arquivo, se houver
